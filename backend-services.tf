@@ -46,7 +46,7 @@ resource "aws_elasticache_cluster" "vprofile-cache" {
 resource "aws_mq_broker" "vprofile-rmq" {
   broker_name        = "vprofile-rmq"
   engine_type        = "ActiveMQ"
-  engine_version     = "5.15.0"
+  engine_version     = "5.15.16"
   host_instance_type = "mq.t2.micro"
   security_groups    = [aws_security_group.vprofile-backend-sg.id]
   subnet_ids         = [module.vpc.private_subnets[0]]
@@ -55,5 +55,3 @@ resource "aws_mq_broker" "vprofile-rmq" {
     password = var.rmqpass
   }
 }
-
-
