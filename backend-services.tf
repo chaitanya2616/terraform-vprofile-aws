@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "vprofile-rds-subgrp" {
-  name = "main"
+  name       = "main"
   subnet_ids = [module.vpc.private_subnets[0], module.vpc.private_subnets[1], module.vpc.private_subnets[2]]
   tags = {
     Name = "subnet groups for RDS"
@@ -18,12 +18,12 @@ resource "aws_db_instance" "vprofile-rds" {
   allocated_storage      = 20
   storage_type           = "gp2"
   engine                 = "mysql"
-  engine_version         = "5.7"
+  engine_version         = "5.7.41"
   instance_class         = "db.t2.micro"
   db_name                = var.dbname
   username               = var.dbuser
   password               = var.dbpass
-  parameter_group_name   = "default.mysql5.7"
+  parameter_group_name   = "default.mysql5.7.41"
   multi_az               = "false"
   publicly_accessible    = "false"
   skip_final_snapshot    = true
@@ -33,7 +33,7 @@ resource "aws_db_instance" "vprofile-rds" {
 }
 
 resource "aws_elasticache_cluster" "vprofile-cache" {
-  cluster_id = "vprofile-cache"
+  cluster_id           = "vprofile-cache"
   engine               = "memcached"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
