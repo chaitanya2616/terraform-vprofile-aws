@@ -1,7 +1,7 @@
 resource "aws_elastic_beanstalk_environment" "vpro-bean-myprod21" {
   name                = "vpro-bean-myprod21"
   application         = aws_elastic_beanstalk_application.vpro-prod.name
-  solution_stack_name = "64bit Amazon Linux 2 v4.3.14 running Tomcat 8.5 Corretto 11"
+  solution_stack_name = "64bit Amazon Linux 2 v4.3.15 running Tomcat 8.5 Corretto 11"
   cname_prefix        = "vpro-bean-prod-domain"
   setting {
     name      = "VPCId"

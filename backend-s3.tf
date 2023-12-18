@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "terraform-aws-vprofile"
+    bucket = "terraform-aws-vprofile1"
     key    = "terraform/backend"
-    region = "us-east-2"
+    region = "us-east-1"
   }
 }

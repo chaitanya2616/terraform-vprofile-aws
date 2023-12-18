@@ -1,12 +1,12 @@
 variable "REGION" {
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "AMIS" {
   type = map(any)
   default = {
     us-east-2 = "ami-07b36ea9852e986ad"
-    us-east-1 = ""
+    us-east-1 = "ami-0fc5d935ebf8bc3bc"
   }
 }
 
@@ -51,15 +51,15 @@ variable "VPC_NAME" {
 }
 
 variable "Zone1" {
-  default = "us-east-2a"
+  default = "us-east-1a"
 }
 
 variable "Zone2" {
-  default = "us-east-2b"
+  default = "us-east-1b"
 }
 
 variable "Zone3" {
-  default = "us-east-2c"
+  default = "us-east-1c"
 }
 
 variable "VpcCIDR" {
